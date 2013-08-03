@@ -6,12 +6,12 @@
  * @author Diego Saouda <diegosaouda@gmail.com>
  */
 
-//alguns servidores n„o permite manipular essa vari·vel
+//alguns servidores n√£o permite manipular essa vari√°vel
 //somente para debug de desenvolvimento
 //ini_set('display_errors', 1);
 
 
-//aqui s„o configuraÁıes
+//aqui s√£o configura√ß√µes
 
 $cont_arquivo_limpo = 0;
 $cont_arquivo_nao_limpo = 0;
@@ -19,14 +19,14 @@ $cont_arquivo = 0;
 $cont_arquivo_infectado = 0;
 
 //true se achar alguma coisa remove
-//false sÛ exibir problema na tela
+//false s√≥ exibir problema na tela
 $remover = false;
 if(isset($_GET['remover'])){
     $remover = true;
 }
 
 
-//busca r·pida pelo malware
+//busca r√°pida pelo malware
 $search = 'c3284d';
 
 //busca completa pelo trecho modificado
@@ -54,7 +54,7 @@ $files = recursive_glob($dir);
 
 echo '<table border="1">';
 echo '<tr>';
-    echo '<td>Data ModificaÁ„o</td>';
+    echo '<td>Data Modifica√ß√£o</td>';
     echo '<td>Arquivo</td>';    
 echo '</tr>';
 foreach($files as $file){
@@ -111,7 +111,7 @@ foreach($files as $file){
               echo 'removido, arquivo limpo';
               $cont_arquivo_limpo++;
           }  else {
-              echo 'arquivo n„o limpo, permiss„o de escrita n„o È v·lida';
+              echo 'arquivo n√£o limpo, permiss√£o de escrita n√£o √© v√°lida';
               $cont_arquivo_nao_limpo++;
           }
       }
@@ -133,7 +133,7 @@ echo '<br />Total de arquivos: '   . '<strong>'. $cont_arquivo                . 
 echo '<br />Total de infectados: ' . '<strong>'.  $cont_arquivo_infectado     . '</strong>' ;
 if($remover){
     echo '<br />Total de limpos: '     . '<strong>'. $cont_arquivo_limpo          . '</strong>' ;
-    echo '<br />Total de limpos que n„o foram limpos: <strong>' . $cont_arquivo_nao_limpo . '</strong>' ;
+    echo '<br />Total de limpos que n√£o foram limpos: <strong>' . $cont_arquivo_nao_limpo . '</strong>' ;
 }
 echo '<br />Restam <strong>' . ($cont_arquivo_infectado - $cont_arquivo_limpo) . '</strong> arquivos para limpar';
 
